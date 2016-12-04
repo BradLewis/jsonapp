@@ -6,16 +6,18 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.use(function (req, res, next) {
+    res.contentType('application/json');
+    next();
+  });
+
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(req,res) {
-    res.header("Content-Type",'application/json');
     res.send("Hello World");
 });
 
 app.post('/', function(req, res) {
-    //res.status(400);
-    res.header("Content-Type",'application/json');
     var videos = req.body.payload;
     var response;
     try {
