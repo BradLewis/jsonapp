@@ -40,7 +40,7 @@ app.post('/', function(req, res) {
             error:"Could not decode request: JSON parsing failed"
         };
     }
-    res.send(response);
+    res.json(response);
 });
 
 app.listen(app.get('port'), function() {
