@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(req,res) {
+    res.header("Content-Type",'application/json');
     res.send("Hello World");
 });
 
