@@ -14,6 +14,7 @@ app.get('/', function(req,res) {
 
 app.post('/', function(req, res) {
     //res.status(400);
+    res.type('json');
     var videos = req.body.payload;
     var response;
     try {
@@ -40,7 +41,7 @@ app.post('/', function(req, res) {
             error:"Could not decode request: JSON parsing failed"
         };
     }
-    res.json(response);
+    res.send(response);
 });
 
 app.listen(app.get('port'), function() {
