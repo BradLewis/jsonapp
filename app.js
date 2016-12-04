@@ -14,7 +14,7 @@ app.get('/', function(req,res) {
 
 app.post('/', function(req, res) {
     //res.status(400);
-    res.type('json');
+    res.header("Content-Type",'application/json');
     var videos = req.body.payload;
     var response;
     try {
