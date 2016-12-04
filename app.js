@@ -6,6 +6,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.set('port', (process.env.PORT || 5000));
+
 app.get('/', function(req,res) {
     res.send("Hello World");
 });
@@ -41,10 +43,8 @@ app.post('/', function(req, res) {
     res.send(response);
 });
 
-var port = 3000;
-var server=app.listen(port,function(){
-    console.log("We have started our server on port " + port);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
-
 
 //curl -XPOST -H 'Content-Type:application/json' -H 'Accept: application/json' --data-binary @test.json localhost:3000
