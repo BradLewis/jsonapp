@@ -6,9 +6,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.get('/', function(req,res) {
+    res.send("Hello World");
+});
+
 app.post('/', function(req, res) {
-    console.log(req.body);
-    console.log(typeof req.body);
     //res.status(400);
     var videos = req.body.payload;
     var response;
