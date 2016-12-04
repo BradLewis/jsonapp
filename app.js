@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(function (req, res, next) {
-    res.contentType('application/json');
+    res.set('Content-Type', 'application/json');
     next();
   });
 
